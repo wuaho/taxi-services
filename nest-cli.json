@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/taxi-services/src",
+  "compilerOptions": {
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/taxi-services/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/taxi-services",
+  "projects": {
+    "taxi-services": {
+      "type": "application",
+      "root": "apps/taxi-services",
+      "entryFile": "main",
+      "sourceRoot": "apps/taxi-services/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/taxi-services/tsconfig.app.json"
+      }
+    },
+    "riders-service": {
+      "type": "application",
+      "root": "apps/riders-service",
+      "entryFile": "main",
+      "sourceRoot": "apps/riders-service/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/riders-service/tsconfig.app.json"
+      }
+    },
+    "logging": {
+      "type": "application",
+      "root": "apps/logging",
+      "entryFile": "main",
+      "sourceRoot": "apps/logging/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/logging/tsconfig.app.json"
+      }
+    }
+  }
+}
